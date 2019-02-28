@@ -7,3 +7,17 @@
 /FlexProxy/FlexProxy/FlexProxy.csproj.user
 /FlexProxy/FlexProxy/bin/Debug/netcoreapp2.1
 /FlexProxy/.vs/config
+/src/.vs
+/src/FlexProxy/bin/Debug/netcoreapp2.1
+/src/FlexProxy/obj
+/src/FlexProxy.Core/bin/Debug/netstandard2.0
+/src/FlexProxy.Core/obj
+/src/FlexProxy.ExceptionHandlerMiddleware/bin/Debug/netstandard2.0
+/src/FlexProxy/FlexProxy.csproj.user
+/src/FlexProxy.ExceptionHandlerMiddleware/obj
+/src/FlexProxy.Repository/bin/Debug/netstandard2.0
+/src/FlexProxy.Repository/obj
+/src/FlexProxy.RobotsMiddleware/bin/Debug/netstandard2.0
+/src/FlexProxy.RobotsMiddleware/obj
+/src/FlexProxy.WebProxyMiddleware/bin/Debug/netstandard2.0
+/src/FlexProxy.WebProxyMiddleware/obj

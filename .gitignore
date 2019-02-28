@@ -5,3 +5,5 @@
 /FlexProxy/.vs/FlexProxy/v15
 /FlexProxy/FlexProxy/obj
 /FlexProxy/FlexProxy/FlexProxy.csproj.user
+/FlexProxy/FlexProxy/bin/Debug/netcoreapp2.1
+/FlexProxy/.vs/config

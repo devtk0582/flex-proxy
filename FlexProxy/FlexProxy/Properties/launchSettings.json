@@ -17,6 +17,7 @@
     },
     "FlexProxy": {
       "commandName": "Project",
+      "commandLineArgs": "/urls=\"http://*:5000\"",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

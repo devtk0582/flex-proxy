@@ -21,3 +21,4 @@
 /src/FlexProxy.RobotsMiddleware/obj
 /src/FlexProxy.WebProxyMiddleware/bin/Debug/netstandard2.0
 /src/FlexProxy.WebProxyMiddleware/obj
+/src/FlexProxy/bin/Debug/netcoreapp2.2

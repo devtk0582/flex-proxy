@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FlexProxy.ExceptionHandlerMiddleware;
+using FlexProxy.RobotsMiddleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -61,6 +62,7 @@ namespace FlexProxy
             }
 
             app.UseCustomExceptionHandler();
+            app.UseRobots();
 
             app.Run(async context =>
             {

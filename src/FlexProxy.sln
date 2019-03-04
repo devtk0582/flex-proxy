@@ -9,15 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Middleware", "Middleware", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{6866309A-771A-43BE-A8C7-CBFD7C9A9A7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexProxy.Core", "FlexProxy.Core\FlexProxy.Core.csproj", "{A1C7DCFC-4D61-4AAA-B771-E89343870C01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlexProxy.Core", "FlexProxy.Core\FlexProxy.Core.csproj", "{A1C7DCFC-4D61-4AAA-B771-E89343870C01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexProxy.Repository", "FlexProxy.Repository\FlexProxy.Repository.csproj", "{32C9AF10-66DD-40FA-9DBE-E2D64F4C5F71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlexProxy.Repository", "FlexProxy.Repository\FlexProxy.Repository.csproj", "{32C9AF10-66DD-40FA-9DBE-E2D64F4C5F71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexProxy.ExceptionHandlerMiddleware", "FlexProxy.ExceptionHandlerMiddleware\FlexProxy.ExceptionHandlerMiddleware.csproj", "{8E800B1F-24B4-47E2-9015-044E32BB4466}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlexProxy.ExceptionHandlerMiddleware", "FlexProxy.ExceptionHandlerMiddleware\FlexProxy.ExceptionHandlerMiddleware.csproj", "{8E800B1F-24B4-47E2-9015-044E32BB4466}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexProxy.RobotsMiddleware", "FlexProxy.RobotsMiddleware\FlexProxy.RobotsMiddleware.csproj", "{7A0ED343-FBF9-454F-82DE-3A17AB854305}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlexProxy.RobotsMiddleware", "FlexProxy.RobotsMiddleware\FlexProxy.RobotsMiddleware.csproj", "{7A0ED343-FBF9-454F-82DE-3A17AB854305}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexProxy.WebProxyMiddleware", "FlexProxy.WebProxyMiddleware\FlexProxy.WebProxyMiddleware.csproj", "{C866C789-4719-4A07-BC91-11E67E36DB12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlexProxy.WebProxyMiddleware", "FlexProxy.WebProxyMiddleware\FlexProxy.WebProxyMiddleware.csproj", "{C866C789-4719-4A07-BC91-11E67E36DB12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexProxy.HealthCheckMiddleware", "FlexProxy.HealthCheckMiddleware\FlexProxy.HealthCheckMiddleware.csproj", "{361BB5E2-03ED-4F77-8EFE-5040E9A9D74F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,10 @@ Global
 		{C866C789-4719-4A07-BC91-11E67E36DB12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C866C789-4719-4A07-BC91-11E67E36DB12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C866C789-4719-4A07-BC91-11E67E36DB12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{361BB5E2-03ED-4F77-8EFE-5040E9A9D74F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{361BB5E2-03ED-4F77-8EFE-5040E9A9D74F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{361BB5E2-03ED-4F77-8EFE-5040E9A9D74F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{361BB5E2-03ED-4F77-8EFE-5040E9A9D74F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +65,7 @@ Global
 		{8E800B1F-24B4-47E2-9015-044E32BB4466} = {99134AB2-F09D-4A6D-B110-031D0A3FA0E5}
 		{7A0ED343-FBF9-454F-82DE-3A17AB854305} = {99134AB2-F09D-4A6D-B110-031D0A3FA0E5}
 		{C866C789-4719-4A07-BC91-11E67E36DB12} = {99134AB2-F09D-4A6D-B110-031D0A3FA0E5}
+		{361BB5E2-03ED-4F77-8EFE-5040E9A9D74F} = {99134AB2-F09D-4A6D-B110-031D0A3FA0E5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6CF87B3-4210-4A3E-9271-764F5BDAF818}

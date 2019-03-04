@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FlexProxy.ExceptionHandlerMiddleware;
+using FlexProxy.HealthCheckMiddleware;
 using FlexProxy.RobotsMiddleware;
 using FlexProxy.WebProxyMiddleware;
 using Microsoft.AspNetCore.Builder;
@@ -62,14 +63,10 @@ namespace FlexProxy
                 app.UseExceptionHandler("/Error");
             }
 
+            app.UseHealthCheck();
             app.UseCustomExceptionHandler();
             app.UseRobots();
             app.UseWebProxy();
-
-            app.Run(async context =>
-            {
-                await context.Response.WriteAsync("Test Response");
-            });
         }
     }
 }

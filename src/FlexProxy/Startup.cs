@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using FlexProxy.ExceptionHandlerMiddleware;
 using FlexProxy.HealthCheckMiddleware;
+using FlexProxy.RequestTracerMiddleware;
 using FlexProxy.RobotsMiddleware;
 using FlexProxy.WebProxyMiddleware;
 using Microsoft.AspNetCore.Builder;
@@ -64,6 +65,7 @@ namespace FlexProxy
             }
 
             app.UseHealthCheck();
+            app.UseRequestTracer();
             app.UseCustomExceptionHandler();
             app.UseRobots();
             app.UseWebProxy();

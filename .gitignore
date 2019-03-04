@@ -24,3 +24,5 @@
 /src/FlexProxy/bin/Debug/netcoreapp2.2
 /src/FlexProxy.HealthCheckMiddleware/bin/Debug/netstandard2.0
 /src/FlexProxy.HealthCheckMiddleware/obj
+/src/FlexProxy.RequestTracerMiddleware/bin/Debug/netstandard2.0
+/src/FlexProxy.RequestTracerMiddleware/obj

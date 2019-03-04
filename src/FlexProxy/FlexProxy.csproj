@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\FlexProxy.ExceptionHandlerMiddleware\FlexProxy.ExceptionHandlerMiddleware.csproj" />
     <ProjectReference Include="..\FlexProxy.HealthCheckMiddleware\FlexProxy.HealthCheckMiddleware.csproj" />
+    <ProjectReference Include="..\FlexProxy.RequestTracerMiddleware\FlexProxy.RequestTracerMiddleware.csproj" />
     <ProjectReference Include="..\FlexProxy.RobotsMiddleware\FlexProxy.RobotsMiddleware.csproj" />
     <ProjectReference Include="..\FlexProxy.WebProxyMiddleware\FlexProxy.WebProxyMiddleware.csproj" />
   </ItemGroup>

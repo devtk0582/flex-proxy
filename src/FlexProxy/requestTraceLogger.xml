@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<log4net>
+  <root>
+    <level value="ALL" />
+  </root>
+
+  <logger name="TracerLogger">
+    <appender-ref ref="TracerLogger" />
+  </logger>
+  <appender name="TracerLogger" type="log4net.Appender.RollingFileAppender">
+    <file type="log4net.Util.PatternString" value="Logs/RequestTraceLogs/%property{TraceLoggerName}" />
+    <appendToFile value="true" />
+    <rollingStyle value="Date" />
+    <datePattern value="-yyyyMMdd" />
+    <layout type="log4net.Layout.PatternLayout">
+      <conversionPattern value="%message%newline" />
+    </layout>
+  </appender>
+</log4net>

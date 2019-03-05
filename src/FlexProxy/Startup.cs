@@ -6,6 +6,7 @@ using System.Net;
 using System.Threading.Tasks;
 using FlexProxy.Core;
 using FlexProxy.Core.Models;
+using FlexProxy.Core.Services;
 using FlexProxy.ExceptionHandlerMiddleware;
 using FlexProxy.HealthCheckMiddleware;
 using FlexProxy.RequestTracerMiddleware;
@@ -52,10 +53,22 @@ namespace FlexProxy
         public void ConfigureServices(IServiceCollection services)
         {
             ConfigureOptions(services);
+
+            services.AddSingleton<IRequestTraceLoggerService, RequestTraceLoggerService>();
+            services.AddResponseCompression();
+            services.AddWebProxy();
         }
 
         internal void ConfigureOptions(IServiceCollection services)
         {
+            services.Configure<HostMappingOptions>(options =>
+            {
+                options.ServingHost = Configuration["ServingHost"];
+                options.ServingScheme = Configuration["ServingScheme"];
+                options.DownstreamHost = Configuration["DownstreamHost"];
+                options.DownstreamScheme = Configuration["DownstreamScheme"];
+            });
+
             services.Configure<GzipCompressionProviderOptions>(options =>
             {
                 options.Level = CompressionLevel.Fastest;
@@ -83,14 +96,11 @@ namespace FlexProxy
                 options.MaxResponseTimeInSeconds = int.Parse(Configuration["MaxResponseTimeInSeconds"]);
             });
 
-            var uri = new Uri(_args[0].Substring(_args[0].IndexOf('=') + 1));
-            var domain = uri.Host;
-
             services.Configure<RequestTraceLoggerServiceOptions>(options =>
             {
                 options.LoggerConfigName = Constants.REQUEST_TRACELOGGER_NAME;
                 options.Interval = Constants.REQUEST_TRACELOGGER_INTERVAL;
-                options.ProcessName = domain;
+                options.ProcessName = Configuration["ServingHost"];
             });
         }
 

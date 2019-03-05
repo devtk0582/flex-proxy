@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FlexProxy.Core.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System;
@@ -25,11 +26,12 @@ namespace FlexProxy.SessionHandlerMiddleware
         {
             await _next.Invoke(context);
 
-            if (context.Request.Cookies[_options.Value.EventSessionCookieName] == null)
-            {
-                var newSessionId = Guid.NewGuid();
-                context.Response.Cookies.Append(_options.Value.EventSessionCookieName, newSessionId.ToString());
-            }
+            //TODO: Working in Web Listener but not in Kestrel
+            //if (context.Request.Cookies[_options.Value.EventSessionCookieName] == null)
+            //{
+            //    var newSessionId = Guid.NewGuid();
+            //    context.Response.Headers.Append(HttpHeaders.SetCookie, $"{_options.Value.EventSessionCookieName}={newSessionId}");
+            //}
         }
     }
 }

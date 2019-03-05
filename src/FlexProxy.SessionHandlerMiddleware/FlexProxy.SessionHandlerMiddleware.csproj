@@ -10,4 +10,8 @@
     <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FlexProxy.Core\FlexProxy.Core.csproj" />
+  </ItemGroup>
+
 </Project>

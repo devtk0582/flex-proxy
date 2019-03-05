@@ -1,10 +1,16 @@
-FROM microsoft/dotnet:2.1-aspnetcore-runtime AS base
+FROM microsoft/dotnet:2.2-aspnetcore-runtime AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM microsoft/dotnet:2.1-sdk AS build
+FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /src
 COPY ["FlexProxy/FlexProxy.csproj", "FlexProxy/"]
+COPY ["FlexProxy.RequestTracerMiddleware/FlexProxy.RequestTracerMiddleware.csproj", "FlexProxy.RequestTracerMiddleware/"]
+COPY ["FlexProxy.Core/FlexProxy.Core.csproj", "FlexProxy.Core/"]
+COPY ["FlexProxy.HealthCheckMiddleware/FlexProxy.HealthCheckMiddleware.csproj", "FlexProxy.HealthCheckMiddleware/"]
+COPY ["FlexProxy.ExceptionHandlerMiddleware/FlexProxy.ExceptionHandlerMiddleware.csproj", "FlexProxy.ExceptionHandlerMiddleware/"]
+COPY ["FlexProxy.RobotsMiddleware/FlexProxy.RobotsMiddleware.csproj", "FlexProxy.RobotsMiddleware/"]
+COPY ["FlexProxy.WebProxyMiddleware/FlexProxy.WebProxyMiddleware.csproj", "FlexProxy.WebProxyMiddleware/"]
 RUN dotnet restore "FlexProxy/FlexProxy.csproj"
 COPY . .
 WORKDIR "/src/FlexProxy"

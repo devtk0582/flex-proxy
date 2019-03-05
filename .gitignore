@@ -26,3 +26,5 @@
 /src/FlexProxy.HealthCheckMiddleware/obj
 /src/FlexProxy.RequestTracerMiddleware/bin/Debug/netstandard2.0
 /src/FlexProxy.RequestTracerMiddleware/obj
+/src/FlexProxy.SessionHandlerMiddleware/bin/Debug/netstandard2.0
+/src/FlexProxy.SessionHandlerMiddleware/obj

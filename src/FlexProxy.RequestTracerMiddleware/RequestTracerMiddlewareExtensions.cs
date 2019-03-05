@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FlexProxy.RequestTracerMiddleware
 {
-    public static class RequestTracerExtensions
+    public static class RequestTracerMiddlewareExtensions
     {
         public static IApplicationBuilder UseRequestTracer(this IApplicationBuilder builder)
         {

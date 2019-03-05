@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FlexProxy.ExceptionHandlerMiddleware
 {
-    public static class ExceptionHandlerExtensions
+    public static class ExceptionHandlerMiddlewareExtensions
     {
         public static IApplicationBuilder UseCustomExceptionHandler(this IApplicationBuilder builder)
         {

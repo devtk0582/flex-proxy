@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FlexProxy.WebProxyMiddleware
 {
-    public static class WebProxyExtensions
+    public static class WebProxyMiddlewareExtensions
     {
         public static IApplicationBuilder UseWebProxy(this IApplicationBuilder builder)
         {

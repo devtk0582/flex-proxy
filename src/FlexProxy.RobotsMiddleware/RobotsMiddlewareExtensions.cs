@@ -5,7 +5,7 @@ using System.Text;
 
 namespace FlexProxy.RobotsMiddleware
 {
-    public static class RobotsExtensions
+    public static class RobotsMiddlewareExtensions
     {
         public static void UseRobots(this IApplicationBuilder builder)
         {

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace FlexProxy.HealthCheckMiddleware
 {
-    public static class HealthCheckExtensions
+    public static class HealthCheckMiddlewareExtensions
     {
         public static void UseHealthCheck(this IApplicationBuilder builder)
         {

@@ -28,3 +28,5 @@
 /src/FlexProxy.RequestTracerMiddleware/obj
 /src/FlexProxy.SessionHandlerMiddleware/bin/Debug/netstandard2.0
 /src/FlexProxy.SessionHandlerMiddleware/obj
+/src/FlexProxy.ContentModificationMiddleware/obj
+/src/FlexProxy.ContentModificationMiddleware/bin/Debug/netstandard2.0

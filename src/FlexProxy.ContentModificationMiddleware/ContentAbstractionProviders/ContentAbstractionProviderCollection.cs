@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace FlexProxy.ContentModificationMiddleware.ContentAbstractionProvider
+namespace FlexProxy.ContentModificationMiddleware.ContentAbstractionProviders
 {
     public class ContentAbstractionProviderCollection
     {

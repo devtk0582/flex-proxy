@@ -1,9 +1,11 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using FlexProxy.ContentModificationMiddleware;
+using FlexProxy.ContentModificationMiddleware.ContentAbstraction;
 using FlexProxy.Core;
 using FlexProxy.Core.Models;
 using FlexProxy.Core.Services;
@@ -56,6 +58,7 @@ namespace FlexProxy
 
             services.AddSingleton<IRequestTraceLoggerService, RequestTraceLoggerService>();
             services.AddResponseCompression();
+            services.AddContentModification();
             services.AddWebProxy();
         }
 
@@ -78,6 +81,17 @@ namespace FlexProxy
             {
                 options.Providers.Add<GzipCompressionProvider>();
                 options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(new[] { "text/javascript" });
+            });
+
+            services.Configure<ContentModificationOptions>(options =>
+            {
+
+                options.ContentProviders.Add<HtmlDocumentAbstraction>(new string[] { "text/html" });
+                options.ContentProviders.Add<FormAbstraction>(new string[] { "multipart/form-data", "application/x-www-form-urlencoded" });
+                options.ContentProviders.Add<JavascriptAbstraction>(new string[] { "text/javascript", "​text/x-javascript", "application/javascript", "application/x-javascript", "text/ecmascript", "application/ecmascript", "text/jscript" });
+                options.ContentProviders.Add<JsonAbstraction>(new string[] { "application/json" });
+                options.LogApiOptions.LogApiBaseUrl = Configuration["LoggingApiBaseUrl"];
+                options.LogApiOptions.LogLevels = Configuration["LogLevels"];
             });
 
             services.Configure<WebProxyOptions>(options =>
@@ -120,6 +134,7 @@ namespace FlexProxy
             app.UseCustomExceptionHandler();
             app.UseRobots();
             app.UseResponseCompression();
+            app.UseContentModification();
             app.UseSessionHandler();
             app.UseWebProxy();
         }

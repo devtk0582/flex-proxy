@@ -24,7 +24,7 @@ namespace FlexProxy.ContentModificationMiddleware.HostedObjects
         Task Critical(string data, string message = null);
         Task Critical(dynamic data, string message = null);
     }
-    public class ConsoleLogApi
+    public class ConsoleLogApi : IConsoleLogApi
     {
         private HttpClient _apiClient;
         private LogApiOptions _options;

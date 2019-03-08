@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FlexProxy.ContentModificationMiddleware\FlexProxy.ContentModificationMiddleware.csproj" />
     <ProjectReference Include="..\FlexProxy.ExceptionHandlerMiddleware\FlexProxy.ExceptionHandlerMiddleware.csproj" />
     <ProjectReference Include="..\FlexProxy.HealthCheckMiddleware\FlexProxy.HealthCheckMiddleware.csproj" />
     <ProjectReference Include="..\FlexProxy.RequestTracerMiddleware\FlexProxy.RequestTracerMiddleware.csproj" />

@@ -8,7 +8,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlexProxy.ContentModificationMiddleware.ContentAbstractionProvider
+namespace FlexProxy.ContentModificationMiddleware.ContentAbstractionProviders
 {
     public interface IContentAbstractionProvider
     {

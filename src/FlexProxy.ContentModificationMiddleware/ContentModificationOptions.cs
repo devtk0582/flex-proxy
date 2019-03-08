@@ -1,4 +1,4 @@
-﻿using FlexProxy.ContentModificationMiddleware.ContentAbstractionProvider;
+﻿using FlexProxy.ContentModificationMiddleware.ContentAbstractionProviders;
 using FlexProxy.Core.Models;
 using Microsoft.AspNetCore.Http.Features;
 using System;

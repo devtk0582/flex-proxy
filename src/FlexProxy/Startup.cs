@@ -57,6 +57,7 @@ namespace FlexProxy
             ConfigureOptions(services);
 
             services.AddSingleton<IRequestTraceLoggerService, RequestTraceLoggerService>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddResponseCompression();
             services.AddContentModification();
             services.AddWebProxy();
@@ -116,6 +117,21 @@ namespace FlexProxy
                 options.Interval = Constants.REQUEST_TRACELOGGER_INTERVAL;
                 options.ProcessName = Configuration["ServingHost"];
             });
+
+            //TODO: move modifiers to external source like api or config files
+            services.Configure<ModifierOptions>(options =>
+            {
+                options.Modifiers = new List<JavascriptModifier>
+                    {
+                        new JavascriptModifier
+                        {
+                            Priority = 1,
+                            RequestPhase = RequestPhase.Response,
+                            TargetContentType = "text/html",
+                            ModificationFunction = GetSampleModificationFunction()
+                        }
+                    };
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -137,6 +153,22 @@ namespace FlexProxy
             app.UseContentModification();
             app.UseSessionHandler();
             app.UseWebProxy();
+        }
+
+        private string GetSampleModificationFunction()
+        {
+            return @"var form = document.GetElementByXPath(""/html/body/footer"");
+
+if (form) {
+    var divMyButton = document.AppendElementToPath(""/html/body/footer"", ""div"");
+    divMyButton.SetAttributeValue(""Id"", ""divMyButton"");
+
+    var myBtn = document.AppendElementToPath(""/html/body/footer/div[@id='divMyButton']"", ""a"");
+    myBtn.SetAttributeValue(""href"", ""https://github.com/devtk0582"");
+    myBtn.InnerHtml = ""Go to DevTk0582"";
+
+    document.Save();
+}";
         }
     }
 }

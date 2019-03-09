@@ -16,13 +16,9 @@ namespace FlexProxy.ContentModificationMiddleware.HostedObjects
     public interface IConsoleLogApi
     {
         Task Error(string data, string message = null);
-        Task Error(dynamic data, string message = null);
         Task Info(string data, string message = null);
-        Task Info(dynamic data, string message = null);
         Task Debug(string data, string message = null);
-        Task Debug(dynamic data, string message = null);
         Task Critical(string data, string message = null);
-        Task Critical(dynamic data, string message = null);
     }
     public class ConsoleLogApi : IConsoleLogApi
     {
@@ -50,17 +46,7 @@ namespace FlexProxy.ContentModificationMiddleware.HostedObjects
             await PostLogAsync(LogType.Debug, data, message).ConfigureAwait(false);
         }
 
-        public async Task Debug(dynamic data, string message = null)
-        {
-            await PostLogAsync(LogType.Debug, data, message).ConfigureAwait(false);
-        }
-
         public async Task Error(string data, string message = null)
-        {
-            await PostLogAsync(LogType.Error, data, message).ConfigureAwait(false);
-        }
-
-        public async Task Error(dynamic data, string message = null)
         {
             await PostLogAsync(LogType.Error, data, message).ConfigureAwait(false);
         }
@@ -70,17 +56,7 @@ namespace FlexProxy.ContentModificationMiddleware.HostedObjects
             await PostLogAsync(LogType.Info, data, message).ConfigureAwait(false);
         }
 
-        public async Task Info(dynamic data, string message = null)
-        {
-            await PostLogAsync(LogType.Info, data, message).ConfigureAwait(false);
-        }
-
         public async Task Critical(string data, string message = null)
-        {
-            await PostLogAsync(LogType.Critical, data, message).ConfigureAwait(false);
-        }
-
-        public async Task Critical(dynamic data, string message = null)
         {
             await PostLogAsync(LogType.Critical, data, message).ConfigureAwait(false);
         }
@@ -106,13 +82,6 @@ namespace FlexProxy.ContentModificationMiddleware.HostedObjects
             {
                 _logger.LogError(JsonConvert.SerializeObject(response));
             }
-        }
-
-        private async Task PostLogAsync(LogType type, dynamic data, string message)
-        {
-            string logData = JsonConvert.SerializeObject(data);
-
-            await PostLogAsync(type, logData, message).ConfigureAwait(false);
         }
     }
 }

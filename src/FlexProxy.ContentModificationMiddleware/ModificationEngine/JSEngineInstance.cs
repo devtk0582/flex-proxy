@@ -58,7 +58,7 @@ namespace FlexProxy.ContentModificationMiddleware.ModificationEngine
 
         public void AddHostObject(string itemName, object target)
         {
-            _scriptEngine.SetVariableValue(itemName, target);
+            _scriptEngine.EmbedHostObject(itemName, target);
         }
 
         public void AddHostType(Type type)

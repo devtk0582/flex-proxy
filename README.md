@@ -37,14 +37,14 @@ dotnet FlexProxy.dll
 
 ## Features
 
-### Kestrel web server as web host with configurable urls and ports
-### Html DOM tree parsing and manipulation using HtmlAgilityPack and selective wrappers
-### Use ChakraCore as Javascript engine to dynamically execute C# code on the fly
-### Extensible logging endpoints to write custom logs with external api or to files
-### Request trace logs to keep track of traffic
-### Disable robot scanning
-### Allow to add custom session cookies in the response
-### Javascript engine pool to allow scalable structure to support high-performance Javascript execution
-### Multiple built-in apis (such as Request Api, Response Api, Html Document Api, Form Api, Log Api, Javascript Api, Json Api etc. )to interact with Javascript engine to manipulate contents with different content types 
-### Intelligently build request and response based on comprehensive and expandible builders
+* Kestrel web server as web host with configurable urls and ports
+* Html DOM tree parsing and manipulation using HtmlAgilityPack and selective wrappers
+* Use ChakraCore as Javascript engine to dynamically execute C# code on the fly
+* Extensible logging endpoints to write custom logs with external api or to files
+* Request trace logs to keep track of traffic
+* Disable robot scanning
+* Allow to add custom session cookies in the response
+* Javascript engine pool to allow scalable structure to support high-performance Javascript execution
+* Multiple built-in apis (such as Request Api, Response Api, Html Document Api, Form Api, Log Api, Javascript Api, Json Api etc. )to interact with Javascript engine to manipulate contents with different content types 
+* Intelligently build request and response based on comprehensive and expandible builders
 

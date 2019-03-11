@@ -52,7 +52,6 @@ namespace FlexProxy.HealthCheckMiddleware
 
         private ApiClientResult<string, string> GetHealthcheckContent(string uuid)
         {
-            //TODO: performance actual health check for external apis
             var response = new ApiClientResult<string, string>();
             response.HttpStatusCode = HttpStatusCode.OK;
             response.ResponseTime = TimeSpan.FromSeconds(1);
@@ -82,7 +81,6 @@ namespace FlexProxy.HealthCheckMiddleware
                 return new HealthCheckValidationResult() { Success = false, ResponseTime = response.ResponseTime, Reason = HealthCheckReason.SlowResponseTime };
             }
 
-            //TODO: custom health check text from config
             var healthCheckText = "Success";
 
             if (string.IsNullOrEmpty(healthCheckText))

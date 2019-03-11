@@ -203,14 +203,12 @@ namespace FlexProxy.ContentModificationMiddleware.ContentAbstraction
 
         private bool HasFormDataContentDisposition(ContentDispositionHeaderValue contentDisposition)
         {
-            // Content-Disposition: form-data; name="key";
             return contentDisposition != null && contentDisposition.DispositionType.Equals("form-data")
                 && string.IsNullOrEmpty(contentDisposition.FileName.ToString()) && string.IsNullOrEmpty(contentDisposition.FileNameStar.ToString());
         }
 
         private bool HasFileContentDisposition(ContentDispositionHeaderValue contentDisposition)
         {
-            // Content-Disposition: form-data; name="myfile1"; filename="Misc 002.jpg"
             return contentDisposition != null && contentDisposition.DispositionType.Equals("form-data")
                 && (!string.IsNullOrEmpty(contentDisposition.FileName.ToString()) || !string.IsNullOrEmpty(contentDisposition.FileNameStar.ToString()));
         }
